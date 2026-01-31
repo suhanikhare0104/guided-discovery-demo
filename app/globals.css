@@ -2,10 +2,19 @@
 
 /* 🌸 GLOBAL PINK THEME (forced, no dark mode) */
 :root {
+
   --background:#f6b7c9;
 ; /* pastel pink page background */
+
+  --background: #e39eaf; /* pastel pink */
+  --outline: #591832;    /* dark pink outline */
+  --text: #000000;       /* black text */
+
+  --background: #f6b7c9; /* pastel pink page background */
+
   --outline: #9d174d;    /* dark pink outline */
   --text: #1f1f1f;       /* readable dark text */
+
 
   /* Tailwind v4 theme tokens */
   --color-background: var(--background);

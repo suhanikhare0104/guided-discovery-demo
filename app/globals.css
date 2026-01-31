@@ -6,6 +6,11 @@
   --outline: #591832;    /* dark pink outline */
   --text: #000000;       /* black text */
 
+  --background: #ffd1dc; /* pastel pink page background */
+  --outline: #9d174d;    /* dark pink outline */
+  --text: #1f1f1f;       /* readable dark text */
+
+
   /* Tailwind v4 theme tokens */
   --color-background: var(--background);
   --color-foreground: var(--text);
@@ -15,55 +20,57 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Apply globally */
+/* 🌸 APPLY BACKGROUND TO ALL PAGES */
 html,
 body {
   background-color: var(--background);
   color: var(--text);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
 
-/* 🌹 Default border color everywhere */
+/* 🌹 GLOBAL OUTLINE RULES — THICKER EVERYWHERE */
 * {
   border-color: var(--outline);
+  border-style: solid;
 }
 
-/* 🧁 GLOBAL CARD STYLE (opt-in via class or data attribute) */
+/* 🧁 GLOBAL CARD / BOX STYLE (use for option tiles, results, panels) */
 .card,
 [data-card="true"] {
-  background: rgba(255, 255, 255, 0.6);
-  border: 2px solid var(--outline);
-  border-radius: 16px;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.55);
+  border-width: 4px;
+  border-radius: 20px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-/* 🎀 GLOBAL CONTROLS */
+/* 🎀 INPUTS, BUTTONS, SELECTS — CONSISTENT THICK BORDERS */
 button,
 input,
 textarea,
 select {
-  border: 2px solid var(--outline);
-  border-radius: 14px;
+  border-width: 4px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.7);
   color: var(--text);
-  padding: 0.6rem 0.9rem;
+  padding: 0.7rem 1rem;
   transition:
     box-shadow 160ms ease,
     transform 120ms ease,
     background-color 160ms ease;
 }
 
-/* ✨ HOVER PINK GLOW */
+/* ✨ HOVER GLOW */
 button:hover,
 a:hover,
 input:hover,
 textarea:hover,
 select:hover {
-  box-shadow: 0 0 0 4px rgba(157, 23, 77, 0.25);
+  box-shadow: 0 0 0 5px rgba(157, 23, 77, 0.3);
 }
 
-/* 🎯 SOFT PINK FOCUS OUTLINE (keyboard friendly) */
+/* 🎯 KEYBOARD FOCUS (ACCESSIBLE + PRETTY) */
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
@@ -71,11 +78,11 @@ select:focus-visible,
 a:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 3px rgba(157, 23, 77, 0.45),
-    0 0 0 6px rgba(255, 209, 220, 0.8);
+    0 0 0 4px rgba(157, 23, 77, 0.5),
+    0 0 0 8px rgba(255, 209, 220, 0.9);
 }
 
-/* ✨ Subtle button press */
+/* ✨ CLICK FEEDBACK */
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }

@@ -81,13 +81,12 @@ useEffect(() => {
   let cancelled = false;
 
   async function run() {
-    // Only enrich if we have some results
+
     if (!recs || recs.length === 0) {
       setGoogleInfo({});
       return;
     }
 
-    // Only enrich top 6 (keeps it fast + avoids API spam)
     const top = recs.slice(0, 6);
 
     const entries = await Promise.all(
@@ -216,7 +215,7 @@ useEffect(() => {
 
                     <div className="mt-4 rounded-xl border border-zinc-100 bg-zinc-50 p-4">
                       <p className="text-xs font-semibold text-zinc-800">WHY THIS WAS RECOMMENDED</p>
-                      <p className="mt-1 text-sm text-amber-950">{why}</p>
+                      <p className="mt-1 text-sm text-zinc-700">{why}</p>
                       <p className="mt-2 text-xs text-zinc-500">Verification: {business.verificationNote}</p>
                     </div>
                   </div>
@@ -227,25 +226,21 @@ useEffect(() => {
 
           {/* RIGHT (sticky) */}
           <aside className="lg:col-span-1">
-            <div className="sticky top-6 rounded-2xl border border-amber-950 bg-white p-6">
+            <div className="sticky top-6 rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-lg font-semibold">Your impact today</h3>
 
-              <div className="mt-4 space-y-2 text-sm text-amber-950">
+              <div className="mt-4 space-y-2 text-sm text-zinc-700">
                 <div>✔ Supporting women-owned businesses</div>
                 {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
                 {(flow.values ?? []).includes("sustainable") && <div>✔ Encouraging sustainable choices</div>}
               </div>
 
-              <div className="mt-6 rounded-xl border border-amber-950 bg-amber-950 p-4">
-                <p className="text-xs font-semibold text-amber-950">Did you know?</p>
-                <p className="mt-1 text-sm text-amber-950">
+              <div className="mt-6 rounded-xl border border-zinc-100 bg-zinc-50 p-4">
+                <p className="text-xs font-semibold text-zinc-800">Did you know?</p>
+                <p className="mt-1 text-sm text-zinc-700">
                   This demo can later show category-specific stats with citations on funding gaps and representation.
                 </p>
               </div>
-
-              <a href="/ethics" className="mt-6 inline-block text-sm text-amber-950 hover:text-amber-950">
-                How we rank + verify →
-              </a>
             </div>
           </aside>
         </div>

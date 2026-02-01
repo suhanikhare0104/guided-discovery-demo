@@ -19,7 +19,7 @@ export default function Home() {
           Where you spend matters.
         </p>
 
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h1 className="mt-3 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-center">
           Discover women-owned businesses based on what{" "}
           <span className="underline decoration-zinc-300">you</span> care about.
         </h1>

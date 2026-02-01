@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen font-serif text-zinc-900">
+    <div className="min-h-screen font-serif text-amber-950">
       {/* Top Navigation */}
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div className="text-lg font-semibold tracking-tight">
@@ -8,8 +8,8 @@ export default function Home() {
         </div>
 
         <nav className="flex items-center gap-5 text-sm text-zinc-600">
-          <a href="/about" className="hover:text-zinc-900">About</a>
-          <a href="/submit" className="hover:text-zinc-900">Submit Business</a>
+          <a href="/about" className="hover:text-amber-950">About</a>
+          <a href="/submit" className="hover:text-amber-950">Submit Business</a>
         </nav>
       </header>
 
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="mt-8 flex items-center gap-3">
           <a
             href="/discover/step-1"
-            className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
           >
             Start Discovering
           </a>

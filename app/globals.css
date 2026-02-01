@@ -1,20 +1,15 @@
 @import "tailwindcss";
 
-/* 🌸 GLOBAL PINK THEME (forced, no dark mode) */
+/* 🌸 GLOBAL PINK THEME (single source of truth) */
 :root {
+  /* Page background */
+  --background: #fabcce; /* soft rosy pink */
 
-  --background:#fabcce;
-; /* pastel pink page background */
+  /* Borders / outlines */
+  --outline: #9d174d; /* dark pink */
 
-  --background: #fabcce; /* pastel pink */
-  --outline: #591832;    /* dark pink outline */
-  --text: #000000;       /* black text */
-
-  --background: #fabcce; /* pastel pink page background */
-
-  --outline: #9d174d;    /* dark pink outline */
-  --text: #1f1f1f;       /* readable dark text */
-
+  /* Text */
+  --text: #1f1f1f; /* readable dark text */
 
   /* Tailwind v4 theme tokens */
   --color-background: var(--background);
@@ -25,7 +20,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* 🌸 APPLY BACKGROUND TO ALL PAGES */
+/* 🌸 APPLY BACKGROUND TO ALL PAGES (GLOBAL) */
 html,
 body {
   background-color: var(--background);
@@ -34,13 +29,13 @@ body {
   min-height: 100vh;
 }
 
-/* 🌹 GLOBAL OUTLINE RULES — THICKER EVERYWHERE */
+/* 🌹 GLOBAL OUTLINE RULES — THICK & CONSISTENT */
 * {
   border-color: var(--outline);
   border-style: solid;
 }
 
-/* 🧁 GLOBAL CARD / BOX STYLE (use for option tiles, results, panels) */
+/* 🧁 GLOBAL CARD / BOX STYLE */
 .card,
 [data-card="true"] {
   background: rgba(255, 255, 255, 0.55);
@@ -50,7 +45,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* 🎀 INPUTS, BUTTONS, SELECTS — CONSISTENT THICK BORDERS */
+/* 🎀 INPUTS, BUTTONS, SELECTS */
 button,
 input,
 textarea,
@@ -75,7 +70,7 @@ select:hover {
   box-shadow: 0 0 0 5px rgba(157, 23, 77, 0.3);
 }
 
-/* 🎯 KEYBOARD FOCUS (ACCESSIBLE + PRETTY) */
+/* 🎯 ACCESSIBLE FOCUS */
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,

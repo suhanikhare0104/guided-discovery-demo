@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-pink-100 text-zinc-900">
+    <div className="min-h-screen text-zinc-900">
       {/* Top Navigation */}
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div className="text-lg font-semibold tracking-tight">
@@ -21,7 +21,8 @@ export default function Home() {
         </p>
 
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Discover women-owned businesses based on what <span className="underline decoration-zinc-300">you</span> care about.
+          Discover women-owned businesses based on what{" "}
+          <span className="underline decoration-zinc-300">you</span> care about.
         </h1>
 
         <p className="mt-4 max-w-2xl text-base text-zinc-600">
@@ -44,7 +45,8 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="mt-16 w-full max-w-3xl rounded-2xl border border-zinc-100 bg-zinc-50 p-6 text-left">
+        {/* Info Card */}
+        <div className="mt-16 w-full max-w-3xl rounded-2xl border border-zinc-200 bg-white/70 p-6 text-left">
           <p className="text-sm font-semibold text-zinc-800">How it works</p>
           <ol className="mt-3 space-y-2 text-sm text-zinc-600">
             <li>1) Choose what you’re looking for</li>

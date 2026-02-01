@@ -7,7 +7,7 @@ export default function Home() {
           HerMarket
         </div>
 
-        <nav className="flex items-center gap-5 text-sm text-zinc-600">
+        <nav className="flex items-center gap-5 text-sm text-amber-950">
           <a href="/about" className="hover:text-amber-950">About</a>
           <a href="/submit" className="hover:text-amber-950">Submit Business</a>
         </nav>
@@ -15,7 +15,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="mx-auto flex max-w-5xl flex-col items-center px-6 pt-20 text-center">
-        <p className="mt-4 max-w-2xl text-2xl font-normal text-zinc-600 text-center">
+        <p className="mt-4 max-w-2xl text-2xl font-normal text-amber-950 text-center">
           Where you spend matters.
         </p>
 
@@ -23,23 +23,23 @@ export default function Home() {
           Businesses run by women, chosen by you.{" "}
         </h1>
 
-        <p className="mt-4 max-w-2xl text-2xl font-normal text-zinc-600 text-center">
+        <p className="mt-4 max-w-2xl text-2xl font-normal text-amber-950 text-center">
           No ads. No popularity bias. Just guided discovery that ranks results by your values.
         </p>
 
         <div className="mt-8 flex items-center gap-3">
           <a
             href="/discover/step-1"
-            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-amber-950800"
           >
             Start Discovering
           </a>
         </div>
 
         {/* Info Card */}
-        <div className="mt-16 w-full max-w-3xl rounded-2xl border border-zinc-200 bg-white/70 p-6 text-left">
-          <p className="text-sm font-semibold text-zinc-800">How it works</p>
-          <ol className="mt-3 space-y-2 text-sm text-zinc-600">
+        <div className="mt-16 w-full max-w-3xl rounded-2xl border border-amber-950 bg-white/70 p-6 text-left">
+          <p className="text-sm font-semibold text-amber-950">How it works</p>
+          <ol className="mt-3 space-y-2 text-sm text-amber-950">
             <li>1) Choose what you’re looking for</li>
             <li>2) Pick up to two values you care about</li>
             <li>3) Get curated results with clear explanations</li>

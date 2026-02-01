@@ -74,7 +74,7 @@ export default function SubmitBusinessPage() {
     e.preventDefault();
     setError(null);
 
-    // Minimal URL sanity (demo-safe)
+
     const looksLikeURL = /^https?:\/\/.+\..+/.test(website.trim());
     if (!looksLikeURL) {
       setError("Please enter a valid website link starting with http:// or https://");
@@ -101,14 +101,14 @@ export default function SubmitBusinessPage() {
       createdAt: new Date().toISOString(),
     };
 
-    // Save for demo (local only)
+   
     try {
       const key = "hermarket_submissions";
       const existingRaw = localStorage.getItem(key);
       const existing: Submission[] = existingRaw ? JSON.parse(existingRaw) : [];
       localStorage.setItem(key, JSON.stringify([submission, ...existing]));
     } catch {
-      // If localStorage blocked, still show success
+      
     }
 
     setSubmitted(submission);

@@ -10,13 +10,10 @@ type FlowState = {
   otherText?: string;
   values?: string[];
   locationChoice?: LocationChoice;
-
   userCity?: string;
   userState?: string;
-
   userLat?: number;
   userLon?: number;
-
   radiusMiles?: number;
 };
 
@@ -40,11 +37,10 @@ export default function Step3Location() {
 
   const [choice, setChoice] = useState<LocationChoice | undefined>(undefined);
   const [radius, setRadius] = useState<number>(20);
-
   const [lat, setLat] = useState<number | undefined>(undefined);
   const [lon, setLon] = useState<number | undefined>(undefined);
-  const [geoStatus, setGeoStatus] = useState<"idle" | "loading" | "granted" | "denied">("idle");
-
+  const [geoStatus, setGeoStatus] =
+    useState<"idle" | "loading" | "granted" | "denied">("idle");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -75,40 +71,30 @@ export default function Step3Location() {
       },
       () => {
         setGeoStatus("denied");
-        alert("Location permission denied. You can still use Same state or Anywhere.");
-      },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 60000 }
+        alert("Location permission denied.");
+      }
     );
   }
 
   function onShowResults() {
     if (!choice) return;
 
-    const flow = loadFlow();
-
-    // If user chose near_me, require location
-    if (choice === "near_me" && (typeof lat !== "number" || typeof lon !== "number")) {
-      alert("Please allow location to use Near me + radius.");
+    if (choice === "near_me" && (lat == null || lon == null)) {
+      alert("Please allow location to use Near me.");
       return;
     }
 
-    saveFlow({
-      ...flow,
-      locationChoice: choice,
-      radiusMiles: radius,
-      userLat: lat,
-      userLon: lon,
-    });
-
+    const flow = loadFlow();
+    saveFlow({ ...flow, locationChoice: choice, radiusMiles: radius });
     router.push("/results");
   }
 
   if (!ready) return null;
 
   const btnBase =
-    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-amber-950";
-  const selected = "border-amber-950 bg-amber-950";
-  const unselected = "border-amber-950 bg-white";
+    "w-full rounded-2xl border px-5 py-4 text-left transition";
+  const selected = "border-amber-950 bg-[#fde2e8]";
+  const unselected = "border-amber-950 bg-[#fde2e8]";
 
   const radiusOptions = [5, 10, 15, 20];
 
@@ -118,36 +104,27 @@ export default function Step3Location() {
         <a href="/" className="text-lg font-semibold tracking-tight">
           HerMarket
         </a>
-        <div className="text-sm text-amber-950">Step 3 of 3</div>
+        <div className="text-sm">Step 3 of 3</div>
       </header>
 
       <main className="mx-auto max-w-3xl px-6 pb-16 pt-8">
         <h1 className="text-3xl font-semibold tracking-tight">
           Where should it be?
         </h1>
-        <p className="mt-3 text-amber-950">
-          Choose a location preference. If you pick “Near me,” we’ll ask for your location and filter by radius.
-        </p>
 
         <div className="mt-6 grid gap-3">
           <button
             className={`${btnBase} ${choice === "near_me" ? selected : unselected}`}
             onClick={() => setChoice("near_me")}
           >
-             <strong>Near me</strong>
-            <div className="mt-1 text-sm text-amber-950">
-              Filter within a radius you choose
-            </div>
+            <strong>Near me</strong>
           </button>
 
           <button
             className={`${btnBase} ${choice === "same_state" ? selected : unselected}`}
             onClick={() => setChoice("same_state")}
           >
-             <strong>Same state</strong>
-            <div className="mt-1 text-sm text-amber-950">
-              Prioritize businesses in your state (demo)
-            </div>
+            <strong>Same state</strong>
           </button>
 
           <button
@@ -155,73 +132,44 @@ export default function Step3Location() {
             onClick={() => setChoice("anywhere")}
           >
             <strong>Anywhere</strong>
-            <div className="mt-1 text-sm text-amber-950">
-              Show best matches across all locations
-            </div>
           </button>
         </div>
 
-        {/* Near me extras */}
         {choice === "near_me" && (
-          <div className="mt-6 rounded-2xl border border-amber-950 bg-white p-5">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm font-medium">Use your current location</p>
-                <p className="text-xs text-amber-950">
-                  We use this only to compute distance for results.
-                </p>
-              </div>
+          <div className="mt-6 rounded-2xl border border-amber-950 bg-[#fde2e8] p-5">
+            <button
+              onClick={requestLocation}
+              className="rounded-xl bg-amber-950 px-4 py-2 text-sm font-medium text-white"
+            >
+              Allow location
+            </button>
 
-              <button
-                onClick={requestLocation}
-                className="rounded-xl bg-amber-950 px-4 py-2 text-sm font-medium text-white hover:bg-amber-950"
-              >
-                {geoStatus === "loading" ? "Requesting…" : "Allow location"}
-              </button>
-            </div>
-
-            <div className="mt-4">
-              <p className="text-sm font-medium">Radius</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {radiusOptions.map((r) => (
-                  <button
-                    key={r}
-                    onClick={() => setRadius(r)}
-                    className={`rounded-xl border px-4 py-2 text-sm ${
-                      radius === r ? "border-amber-950 bg-amber-950" : "border-amber-950 bg-bg-soft-pink hover:bg-amber-950"
-                    }`}
-                  >
-                    {r} miles
-                  </button>
-                ))}
-              </div>
-              <p className="mt-2 text-xs text-amber-950">
-                Selected: {radius} miles
-              </p>
-            </div>
-
-            <div className="mt-4 text-xs text-amber-950">
-              Status:{" "}
-              {geoStatus === "granted"
-                ? "Location granted "
-                : geoStatus === "denied"
-                ? "Denied "
-                : geoStatus === "loading"
-                ? "Requesting…"
-                : "Not requested yet"}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {radiusOptions.map((r) => (
+                <button
+                  key={r}
+                  onClick={() => setRadius(r)}
+                  className={`rounded-xl border px-4 py-2 text-sm border-amber-950 bg-[#fde2e8]`}
+                >
+                  {r} miles
+                </button>
+              ))}
             </div>
           </div>
         )}
 
         <div className="mt-10 flex items-center justify-between">
-          <a href="/discover/step-3" className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition">
+          <a
+            href="/discover/step-2"
+            className="rounded-xl bg-[#fde2e8] border border-amber-950 px-5 py-3 text-sm font-medium hover:bg-amber-950 hover:text-white transition"
+          >
             ← Back
           </a>
 
           <button
             onClick={onShowResults}
             disabled={!choice}
-            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition"
+            className="rounded-xl bg-[#fde2e8] border border-amber-950 px-5 py-3 text-sm font-medium hover:bg-amber-950 hover:text-white transition"
           >
             Show Results →
           </button>

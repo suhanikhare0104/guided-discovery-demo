@@ -42,6 +42,43 @@ export default function ResultsPage() {
   }, []);
 
   const recs = useMemo(() => getRecommendations(flow), [flow]);
+<<<<<<< HEAD
+=======
+useEffect(() => {
+  let cancelled = false;
+
+  async function run() {
+
+    if (!recs || recs.length === 0) {
+      setGoogleInfo({});
+      return;
+    }
+
+    const top = recs.slice(0, 6);
+
+    const entries = await Promise.all(
+      top.map(async ({ business }) => {
+        const info = await enrichWithGoogle(business.name, business.city, business.state);
+        return [business.id, info] as const;
+      })
+    );
+
+    if (cancelled) return;
+
+    const next: EnrichmentMap = {};
+    for (const [id, info] of entries) {
+      if (info) next[id] = info;
+    }
+    setGoogleInfo(next);
+  }
+
+  run();
+
+  return () => {
+    cancelled = true;
+  };
+}, [recs]);
+>>>>>>> 656e7179d9446e14dfe650474e71754d768d16ce
 
   const summary = [
     flow.intent ? flow.intent : "—",
@@ -77,7 +114,7 @@ export default function ResultsPage() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* LEFT */}
+          {}
           <section className="lg:col-span-2">
             {recs.length === 0 ? (
               <div className="rounded-2xl border border-zinc-200 p-6">
@@ -135,15 +172,19 @@ export default function ResultsPage() {
             )}
           </section>
 
-          {/* RIGHT (sticky) */}
+          {}
           <aside className="lg:col-span-1">
             <div className="sticky top-6 rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-lg font-semibold">Your impact today</h3>
 
               <div className="mt-4 space-y-2 text-sm text-zinc-700">
+<<<<<<< HEAD
                 <div>✔ Supporting women-owned businesses</div>
+=======
+                <div> Supporting women-owned businesses</div>
+>>>>>>> 656e7179d9446e14dfe650474e71754d768d16ce
                 {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
-                {(flow.values ?? []).includes("sustainable") && <div>✔ Encouraging sustainable choices</div>}
+                {(flow.values ?? []).includes("sustainable") && <div> Encouraging sustainable choices</div>}
               </div>
 
               <div className="mt-6 rounded-xl border border-zinc-100 bg-zinc-50 p-4">
@@ -152,10 +193,6 @@ export default function ResultsPage() {
                   This demo can later show category-specific stats with citations on funding gaps and representation.
                 </p>
               </div>
-
-              <a href="/ethics" className="mt-6 inline-block text-sm text-amber-950 hover:text-amber-950">
-                How we rank + verify →
-              </a>
             </div>
           </aside>
         </div>

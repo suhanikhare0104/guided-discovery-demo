@@ -20,7 +20,7 @@ export default function Home() {
         </p>
 
         <h1 className="mt-3 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-center">
-          Businesses run by women, chosen by you{" "}
+          Businesses run by women, chosen by you.{" "}
         </h1>
 
         <p className="mt-4 max-w-2xl text-2xl font-normal text-zinc-600 text-center">

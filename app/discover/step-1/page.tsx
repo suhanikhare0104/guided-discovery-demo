@@ -57,20 +57,17 @@ export default function Step1Intent() {
 
   if (!ready) return null;
 
-  // ---- BUTTON STYLING USING DARK BROWN (#451a03) ----
   const btnBase =
     "w-full rounded-2xl border px-5 py-4 text-left transition font-medium";
   const selected =
-    "border-[color:var(--outline)] bg-[color:var(--outline)] text-white hover:bg-[color:var(--outline)]";
+    "border-[color:var(--outline)] bg-[color:var(--outline)] text-white hover:bg-[color:var(--outline)/90]";
   const unselected =
     "border-[color:var(--outline)] bg-white text-[color:var(--outline)] hover:bg-[color:var(--outline)/10]";
 
   return (
-    <div className="min-h-screen bg-[#fabcce] text-[color:var(--outline)]">
+    <div className="min-h-screen bg-[#fabcce] text-[color:var(--outline)] font-serif">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <a href="/" className="text-lg font-semibold tracking-tight">
-          HerMarket
-        </a>
+        <div className="text-3xl font-bold tracking-tight">HerMarket</div>
         <div className="text-sm text-[color:var(--outline)]">Step 1 of 3</div>
       </header>
 
@@ -117,22 +114,21 @@ export default function Step1Intent() {
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-<<<<<<< Updated upstream
-          <a href="/" className="text-sm text-[color:var(--outline)] hover:text-[color:var(--outline)]">
-=======
-          <a href="/discover/step-1" className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition">
->>>>>>> Stashed changes
+          <a
+            href="/"
+            className="rounded-xl border-4 border-[color:var(--outline)] px-5 py-3 text-sm font-medium text-[color:var(--outline)] 
+                       bg-[rgba(255,209,220,0.9)] hover:bg-[rgba(255,209,220,1)] 
+                       focus-visible:outline-none focus-visible:ring-4 
+                       focus-visible:ring-[color:var(--outline)/50] focus-visible:ring-offset-2 transition"
+          >
             ← Back
           </a>
 
           <button
             onClick={onNext}
             disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
-<<<<<<< Updated upstream
-            className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-[color:var(--outline)/90]"
-=======
-            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 transition"
->>>>>>> Stashed changes
+            className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white 
+                      disabled:cursor-not-allowed disabled:opacity-40 hover:bg-[color:var(--outline)/90] transition"
           >
             Next →
           </button>

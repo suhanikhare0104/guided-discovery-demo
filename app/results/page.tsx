@@ -11,14 +11,6 @@ type FlowState = {
   userLon?: number;
   radiusMiles?: number;
 };
-type GoogleEnrichment = {
-  rating?: number;
-  reviewCount?: number;
-  mapsUrl?: string;
-  openNow?: boolean;
-};
-
-type EnrichmentMap = Record<string, GoogleEnrichment>;
 
 const KEY = "guided_discovery_flow";
 
@@ -41,77 +33,15 @@ function prettyValue(v: string) {
   };
   return map[v] ?? v;
 }
-async function enrichWithGoogle(name: string, city: string, state: string) {
-  const query = `${name} ${city} ${state}`;
-
-  const searchRes = await fetch(
-    `/api/google/textsearch?query=${encodeURIComponent(query)}`
-  );
-  if (!searchRes.ok) return null;
-  const searchData = await searchRes.json();
-
-  const placeId = searchData?.results?.[0]?.place_id;
-  if (!placeId) return null;
-
-  const detailsRes = await fetch(
-    `/api/google/details?placeId=${encodeURIComponent(placeId)}`
-  );
-  if (!detailsRes.ok) return null;
-  const detailsData = await detailsRes.json();
-
-  const r = detailsData?.result;
-  return {
-    rating: r?.rating,
-    reviewCount: r?.user_ratings_total,
-    mapsUrl: r?.url,
-    openNow: r?.opening_hours?.open_now,
-  } as GoogleEnrichment;
-}
 
 export default function ResultsPage() {
   const [flow, setFlow] = useState<FlowState>({});
-const [googleInfo, setGoogleInfo] = useState<EnrichmentMap>({});
 
   useEffect(() => {
     setFlow(loadFlow());
   }, []);
 
   const recs = useMemo(() => getRecommendations(flow), [flow]);
-useEffect(() => {
-  let cancelled = false;
-
-  async function run() {
-    // Only enrich if we have some results
-    if (!recs || recs.length === 0) {
-      setGoogleInfo({});
-      return;
-    }
-
-    // Only enrich top 6 (keeps it fast + avoids API spam)
-    const top = recs.slice(0, 6);
-
-    const entries = await Promise.all(
-      top.map(async ({ business }) => {
-        const info = await enrichWithGoogle(business.name, business.city, business.state);
-        return [business.id, info] as const;
-      })
-    );
-
-    if (cancelled) return;
-
-    const next: EnrichmentMap = {};
-    for (const [id, info] of entries) {
-      if (info) next[id] = info;
-    }
-    setGoogleInfo(next);
-  }
-
-  run();
-
-  return () => {
-    cancelled = true;
-  };
-}, [recs]);
 
   const summary = [
     flow.intent ? flow.intent : "—",
@@ -170,26 +100,6 @@ useEffect(() => {
                           {business.description} • {business.city}, {business.state}
                           {typeof distanceMiles === "number" && <> • {distanceMiles.toFixed(1)} mi</>}
                         </p>
-{googleInfo[business.id]?.rating && (
-  <p className="mt-2 text-sm text-zinc-700">
-     {googleInfo[business.id]?.rating} ({googleInfo[business.id]?.reviewCount ?? 0} reviews)
-    {typeof googleInfo[business.id]?.openNow === "boolean" && (
-      <span className="ml-2 font-medium">
-        · {googleInfo[business.id]!.openNow ? "Open now" : "Closed"}
-      </span>
-    )}
-    {googleInfo[business.id]?.mapsUrl && (
-      <a
-        className="ml-2 underline"
-        href={googleInfo[business.id]!.mapsUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        View on Google
-      </a>
-    )}
-  </p>
-)}
 
                         <div className="mt-3 flex flex-wrap gap-2">
                           <span className="rounded-xl border border-zinc-200 px-3 py-1 text-xs">Women-owned</span>
@@ -216,7 +126,7 @@ useEffect(() => {
 
                     <div className="mt-4 rounded-xl border border-zinc-100 bg-zinc-50 p-4">
                       <p className="text-xs font-semibold text-zinc-800">WHY THIS WAS RECOMMENDED</p>
-                      <p className="mt-1 text-sm text-amber-950">{why}</p>
+                      <p className="mt-1 text-sm text-zinc-700">{why}</p>
                       <p className="mt-2 text-xs text-zinc-500">Verification: {business.verificationNote}</p>
                     </div>
                   </div>
@@ -227,18 +137,18 @@ useEffect(() => {
 
           {/* RIGHT (sticky) */}
           <aside className="lg:col-span-1">
-            <div className="sticky top-6 rounded-2xl border border-amber-950 bg-white p-6">
+            <div className="sticky top-6 rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-lg font-semibold">Your impact today</h3>
 
-              <div className="mt-4 space-y-2 text-sm text-amber-950">
+              <div className="mt-4 space-y-2 text-sm text-zinc-700">
                 <div>✔ Supporting women-owned businesses</div>
                 {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
                 {(flow.values ?? []).includes("sustainable") && <div>✔ Encouraging sustainable choices</div>}
               </div>
 
-              <div className="mt-6 rounded-xl border border-amber-950 bg-amber-950 p-4">
-                <p className="text-xs font-semibold text-amber-950">Did you know?</p>
-                <p className="mt-1 text-sm text-amber-950">
+              <div className="mt-6 rounded-xl border border-zinc-100 bg-zinc-50 p-4">
+                <p className="text-xs font-semibold text-zinc-800">Did you know?</p>
+                <p className="mt-1 text-sm text-zinc-700">
                   This demo can later show category-specific stats with citations on funding gaps and representation.
                 </p>
               </div>

@@ -59,7 +59,7 @@ export default function AboutPage() {
             >
               Start Discovering
             </a>
-            <a
+            <a //hi
               href="/submit"
               className="rounded-xl border border-amber-950 bg-white/70 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-white/80"
             >

@@ -108,7 +108,7 @@ export default function SubmitBusinessPage() {
 
           {success ? (
             <div className="mt-8 card p-6">
-              <p className="text-sm font-semibold text-zinc-900">✅ Submitted!</p>
+              <p className="text-sm font-semibold text-zinc-900"> Submitted!</p>
               <p className="mt-2 text-sm text-zinc-700">
                 Thanks — your submission was saved (demo mode). You can submit another business below.
               </p>
@@ -133,7 +133,7 @@ export default function SubmitBusinessPage() {
             <form onSubmit={handleSubmit} className="mt-8 grid gap-6">
               {error && (
                 <div className="card p-4">
-                  <p className="text-sm font-semibold text-zinc-900">⚠️ Fix this</p>
+                  <p className="text-sm font-semibold text-zinc-900"> Fix this</p>
                   <p className="mt-1 text-sm text-zinc-700">{error}</p>
                 </div>
               )}
@@ -205,11 +205,11 @@ export default function SubmitBusinessPage() {
                 <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {(
                     [
-                      ["local", "📍 Local"],
-                      ["sustainable", "🌱 Sustainable"],
-                      ["small_new", "🆕 Small / New"],
-                      ["underrepresented", "⚖️ Underrepresented"],
-                      ["fast_delivery", "🚚 Fast delivery"],
+                      ["local", " Local"],
+                      ["sustainable", " Sustainable"],
+                      ["small_new", " Small / New"],
+                      ["underrepresented", " Underrepresented"],
+                      ["fast_delivery", " Fast delivery"],
                     ] as [ValueTag, string][]
                   ).map(([key, label]) => (
                     <button

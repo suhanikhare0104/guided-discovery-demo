@@ -92,7 +92,7 @@ export default function Step2Values() {
             className={`${btnBase} ${values.includes("local") ? selected : unselected}`}
             onClick={() => toggle("local")}
           >
-            📍 <strong>Local</strong>
+             <strong>Local</strong>
             <div className="mt-1 text-sm text-amber-950">Support founders near you</div>
           </button>
 
@@ -100,7 +100,7 @@ export default function Step2Values() {
             className={`${btnBase} ${values.includes("sustainable") ? selected : unselected}`}
             onClick={() => toggle("sustainable")}
           >
-            🌱 <strong>Sustainable</strong>
+             <strong>Sustainable</strong>
             <div className="mt-1 text-sm text-amber-950">Eco-conscious practices</div>
           </button>
 
@@ -108,7 +108,7 @@ export default function Step2Values() {
             className={`${btnBase} ${values.includes("small_new") ? selected : unselected}`}
             onClick={() => toggle("small_new")}
           >
-            🆕 <strong>Small / New Business</strong>
+             <strong>Small / New Business</strong>
             <div className="mt-1 text-sm text-amber-950">Early-stage founders</div>
           </button>
 
@@ -116,7 +116,7 @@ export default function Step2Values() {
             className={`${btnBase} ${values.includes("underrepresented") ? selected : unselected}`}
             onClick={() => toggle("underrepresented")}
           >
-            ⚖️ <strong>Underrepresented Industry</strong>
+             <strong>Underrepresented Industry</strong>
             <div className="mt-1 text-sm text-amber-950">Breaking into new spaces</div>
           </button>
 
@@ -124,7 +124,7 @@ export default function Step2Values() {
             className={`${btnBase} ${values.includes("fast_delivery") ? selected : unselected}`}
             onClick={() => toggle("fast_delivery")}
           >
-            🚚 <strong>Fast Delivery</strong>
+             <strong>Fast Delivery</strong>
             <div className="mt-1 text-sm text-amber-950">Get it quickly</div>
           </button>
         </div>

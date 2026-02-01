@@ -2,20 +2,14 @@ export default function Home() {
   return (
     <div className="min-h-screen font-serif text-amber-950">
       {/* Top Navigation */}
-
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <div
+        <a
+          href="/"
           className="text-3xl font-bold tracking-tight px-3 py-1 border-4 border-amber-950"
           style={{ backgroundColor: "rgba(255, 209, 220, 0.9)" }}
         >
-
-      <header className="mx-auto flex max-w-5xl items-start justify-between px-6 py-5">
-        
-        {/* Logo Badge (UPDATED) */}
-        <div className="rounded-2xl border border-amber-950 bg-pink-100 px-4 py-1 text-4xl font-bold tracking-tight">
-
           HerMarket
-        </div>
+        </a>
 
         <nav className="flex items-center gap-5 text-base text-amber-950">
           <a href="/about" className="font-bold hover:text-amber-950">
@@ -45,7 +39,7 @@ export default function Home() {
           <a
             href="/discover/step-1"
             className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-amber-950800"
-          >s
+          >
             Start Discovering
           </a>
         </div>
@@ -53,7 +47,7 @@ export default function Home() {
         {/* Info Card */}
         <div className="mt-12 mx-auto w-fit max-w-md rounded-2xl border border-amber-950 bg-white/70 px-8 py-6 text-center">
           <p className="text-sm font-semibold text-amber-950">How it works</p>
-          <ol className="mt- space-y-2 text-sm text-amber-950">
+          <ol className="mt-4 space-y-2 text-sm text-amber-950">
             <li>1) Choose what you’re looking for</li>
             <li>2) Pick up to two values you care about</li>
             <li>3) Get curated results with clear explanations</li>

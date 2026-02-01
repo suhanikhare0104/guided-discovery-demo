@@ -87,7 +87,9 @@ export default function Step1Intent() {
               onClick={() => choose(i as Intent)}
             >
               <div className="text-lg">
-                {i === "other" ? "Something else" : i.charAt(0).toUpperCase() + i.slice(1)}
+                {i === "other"
+                  ? "Something else"
+                  : i.charAt(0).toUpperCase() + i.slice(1)}
               </div>
               <div className="mt-1 text-sm text-[color:var(--outline)]">
                 {{
@@ -113,36 +115,27 @@ export default function Step1Intent() {
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <div className="mt-10 flex items-center justify-between">
-
+          {/* Back */}
           <a
             href="/"
-            className="rounded-xl border-4 border-[color:var(--outline)] px-5 py-3 text-sm font-medium text-[color:var(--outline)] 
-                       bg-[rgba(255,209,220,0.9)] hover:bg-[rgba(255,209,220,1)] 
-                       focus-visible:outline-none focus-visible:ring-4 
-                       focus-visible:ring-[color:var(--outline)/50] focus-visible:ring-offset-2 transition"
+            className="rounded-xl border-4 border-[color:var(--outline)] px-5 py-3 text-sm font-medium text-[color:var(--outline)]
+                       bg-[rgba(255,209,220,0.9)] hover:bg-[rgba(255,209,220,1)]
+                       transition"
           >
             ← Back
-
-          {/* Back button — styled IDENTICAL to Next */}
-          <a
-            href="/"
-            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition"
-          >
-            <span>← Back</span>
-
           </a>
 
+          {/* Next */}
           <button
             onClick={onNext}
             disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
-
-            className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white 
-                      disabled:cursor-not-allowed disabled:opacity-40 hover:bg-[color:var(--outline)/90] transition"
-            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 transition"
-
+            className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white
+                       disabled:cursor-not-allowed disabled:opacity-40
+                       hover:bg-[color:var(--outline)/90] transition"
           >
-            <span>Next →</span>
+            Next →
           </button>
         </div>
 

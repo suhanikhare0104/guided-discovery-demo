@@ -117,14 +117,22 @@ export default function Step1Intent() {
         </div>
 
         <div className="mt-10 flex items-center justify-between">
+<<<<<<< Updated upstream
           <a href="/" className="text-sm text-[color:var(--outline)] hover:text-[color:var(--outline)]">
+=======
+          <a href="/discover/step-1" className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition">
+>>>>>>> Stashed changes
             ← Back
           </a>
 
           <button
             onClick={onNext}
             disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
+<<<<<<< Updated upstream
             className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-[color:var(--outline)/90]"
+=======
+            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 transition"
+>>>>>>> Stashed changes
           >
             Next →
           </button>

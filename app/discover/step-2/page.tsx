@@ -130,7 +130,7 @@ export default function Step2Values() {
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-          <a href="/discover/step-1" className="text-sm text-amber-950 hover:text-amber-950">
+          <a href="/discover/step-1" className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-amber-950">
             ← Back
           </a>
 

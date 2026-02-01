@@ -231,7 +231,7 @@ useEffect(() => {
 
               <div className="mt-4 space-y-2 text-sm text-zinc-700">
                 <div> Supporting women-owned businesses</div>
-                {(flow.values ?? []).includes("local") && <div> Prioritizing local founders</div>}
+                {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
                 {(flow.values ?? []).includes("sustainable") && <div> Encouraging sustainable choices</div>}
               </div>
 

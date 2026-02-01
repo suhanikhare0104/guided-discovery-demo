@@ -116,22 +116,22 @@ export default function Step1Intent() {
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-  <a
-    href="/"
-    className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition"
-  >
-    ← Back
-  </a>
+          {/* Back button — styled IDENTICAL to Next */}
+          <a
+            href="/"
+            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white transition"
+          >
+            <span>← Back</span>
+          </a>
 
-  <button
-    onClick={onNext}
-    disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
-    className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 transition"
-  >
-    <span>Next →</span>
-  </button>
-</div>
-
+          <button
+            onClick={onNext}
+            disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
+            className="rounded-xl bg-white border border-amber-950 px-5 py-3 text-sm font-medium text-amber-950 hover:bg-amber-950 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 transition"
+          >
+            <span>Next →</span>
+          </button>
+        </div>
 
         {intent === "other" && (
           <p className="mt-3 text-xs text-[color:var(--outline)]">

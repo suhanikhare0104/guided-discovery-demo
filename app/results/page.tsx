@@ -42,8 +42,7 @@ export default function ResultsPage() {
   }, []);
 
   const recs = useMemo(() => getRecommendations(flow), [flow]);
-<<<<<<< HEAD
-=======
+
 useEffect(() => {
   let cancelled = false;
 
@@ -78,7 +77,7 @@ useEffect(() => {
     cancelled = true;
   };
 }, [recs]);
->>>>>>> 656e7179d9446e14dfe650474e71754d768d16ce
+
 
   const summary = [
     flow.intent ? flow.intent : "—",
@@ -178,11 +177,11 @@ useEffect(() => {
               <h3 className="text-lg font-semibold">Your impact today</h3>
 
               <div className="mt-4 space-y-2 text-sm text-zinc-700">
-<<<<<<< HEAD
+
                 <div>✔ Supporting women-owned businesses</div>
-=======
+
                 <div> Supporting women-owned businesses</div>
->>>>>>> 656e7179d9446e14dfe650474e71754d768d16ce
+
                 {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
                 {(flow.values ?? []).includes("sustainable") && <div> Encouraging sustainable choices</div>}
               </div>

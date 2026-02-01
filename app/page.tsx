@@ -2,18 +2,18 @@ export default function Home() {
   return (
     <div className="min-h-screen font-serif text-amber-950">
       {/* Top Navigation */}
-<<<<<<< HEAD
+
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div
           className="text-3xl font-bold tracking-tight px-3 py-1 border-4 border-amber-950"
           style={{ backgroundColor: "rgba(255, 209, 220, 0.9)" }}
         >
-=======
+
       <header className="mx-auto flex max-w-5xl items-start justify-between px-6 py-5">
         
         {/* Logo Badge (UPDATED) */}
         <div className="rounded-2xl border border-amber-950 bg-pink-100 px-4 py-1 text-4xl font-bold tracking-tight">
->>>>>>> 656e7179d9446e14dfe650474e71754d768d16ce
+
           HerMarket
         </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
           <a
             href="/discover/step-1"
             className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-amber-950800"
-          >
+          >s
             Start Discovering
           </a>
         </div>

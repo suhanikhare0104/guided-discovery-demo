@@ -3,13 +3,13 @@ export default function Home() {
     <div className="min-h-screen font-serif text-amber-950">
       {/* Top Navigation */}
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <div className="text-lg font-semibold tracking-tight">
+        <div className="text-3xl font-bold tracking-tight">
           HerMarket
         </div>
 
-        <nav className="flex items-center gap-5 text-sm text-amber-950">
-          <a href="/about" className="hover:text-amber-950">About</a>
-          <a href="/submit" className="hover:text-amber-950">Submit Business</a>
+        <nav className="flex items-center gap-5 text-base text-amber-950">
+          <a href="/about" className="font-bold hover:text-amber-950">About</a>
+          <a href="/submit" className="font-bold hover:text-amber-950">Submit Business</a>
         </nav>
       </header>
 

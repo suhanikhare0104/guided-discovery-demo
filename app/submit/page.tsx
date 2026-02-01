@@ -80,17 +80,17 @@ export default function SubmitBusinessPage() {
   }
 
   return (
-    <div className="min-h-screen text-zinc-900">
+    <div className="min-h-screen bg-[#fabcce] text-amber-950">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-semibold tracking-tight">
           HerMarket
         </a>
 
-        <nav className="flex items-center gap-5 text-sm text-zinc-700">
-          <a href="/about" className="hover:text-zinc-900">
+        <nav className="flex items-center gap-5 text-sm text-amber-950">
+          <a href="/about" className="hover:text-amber-950">
             About
           </a>
-          <a href="/submit" className="hover:text-zinc-900 underline underline-offset-4">
+          <a href="/submit" className="hover:text-amber-950 underline underline-offset-4">
             Submit Business
           </a>
         </nav>
@@ -133,8 +133,8 @@ export default function SubmitBusinessPage() {
             <form onSubmit={handleSubmit} className="mt-8 grid gap-6">
               {error && (
                 <div className="card p-4">
-                  <p className="text-sm font-semibold text-zinc-900"> Fix this</p>
-                  <p className="mt-1 text-sm text-zinc-700">{error}</p>
+                  <p className="text-sm font-semibold text-amber-950"> Fix this</p>
+                  <p className="mt-1 text-sm text-amber-950">{error}</p>
                 </div>
               )}
 
@@ -178,17 +178,17 @@ export default function SubmitBusinessPage() {
 
               <div className="grid gap-4 sm:grid-cols-3">
                 <div>
-                  <label className="text-sm font-medium text-zinc-800">City *</label>
+                  <label className="text-sm font-medium text-amber-950">City *</label>
                   <input value={city} onChange={(e) => setCity(e.target.value)} className="mt-2 w-full" />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-800">State *</label>
+                  <label className="text-sm font-medium text-amber-950">State *</label>
                   <input value={stateUS} onChange={(e) => setStateUS(e.target.value)} className="mt-2 w-full" />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-800">Website link *</label>
+                  <label className="text-sm font-medium text-amber-950">Website link *</label>
                   <input
                     value={website}
                     onChange={(e) => setWebsite(e.target.value)}
@@ -200,7 +200,7 @@ export default function SubmitBusinessPage() {
 
               <div className="card p-5">
                 <p className="text-sm font-semibold text-amber-950">Values</p>
-                <p className="mt-1 text-sm text-zinc-700">Select all that apply.</p>
+                <p className="mt-1 text-sm text-amber-950">Select all that apply.</p>
 
                 <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {(
@@ -227,7 +227,7 @@ export default function SubmitBusinessPage() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-zinc-800">Founder story (optional)</label>
+                <label className="text-sm font-medium text-amber-950">Founder story (optional)</label>
                 <textarea
                   value={story}
                   onChange={(e) => setStory(e.target.value)}
@@ -241,7 +241,7 @@ export default function SubmitBusinessPage() {
                 type="submit"
                 disabled={!canSubmit}
                 className={`rounded-xl px-5 py-3 text-sm font-medium ${
-                  canSubmit ? "bg-zinc-900 text-white hover:bg-zinc-800" : "bg-zinc-400 text-white cursor-not-allowed"
+                  canSubmit ? "bg-amber-950 text-white hover:bg-amber-950" : "bg-amber-950 text-white cursor-not-allowed"
                 }`}
               >
                 Submit

@@ -154,7 +154,7 @@ export default function Step3Location() {
             className={`${btnBase} ${choice === "anywhere" ? selected : unselected}`}
             onClick={() => setChoice("anywhere")}
           >
-            🌎 <strong>Anywhere</strong>
+            <strong>Anywhere</strong>
             <div className="mt-1 text-sm text-amber-950">
               Show best matches across all locations
             </div>

@@ -57,99 +57,81 @@ export default function Step1Intent() {
 
   if (!ready) return null;
 
+  // ---- BUTTON STYLING USING DARK BROWN (#451a03) ----
   const btnBase =
-    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-amber-950";
+    "w-full rounded-2xl border px-5 py-4 text-left transition font-medium";
   const selected =
-    "border-amber-950 bg-amber-950";
+    "border-[color:var(--outline)] bg-[color:var(--outline)] text-white hover:bg-[color:var(--outline)]";
   const unselected =
-    "border-amber-950 bg-white";
+    "border-[color:var(--outline)] bg-white text-[color:var(--outline)] hover:bg-[color:var(--outline)/10]";
 
   return (
-    <div className="min-h-screen bg-[#fabcce] text-amber-950">
+    <div className="min-h-screen bg-[#fabcce] text-[color:var(--outline)]">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-semibold tracking-tight">
           HerMarket
         </a>
-        <div className="text-sm text-amber-950">Step 1 of 3</div>
+        <div className="text-sm text-[color:var(--outline)]">Step 1 of 3</div>
       </header>
 
       <main className="mx-auto max-w-3xl px-6 pb-16 pt-8">
         <h1 className="text-3xl font-semibold tracking-tight">
           What are you looking for today?
         </h1>
-        <p className="mt-3 text-amber-950">
+        <p className="mt-3 text-[color:var(--outline)]">
           Pick one to start. We’ll rank results based on your values in the next step.
         </p>
 
         <div className="mt-8 grid gap-3">
-          <button
-            className={`${btnBase} ${intent === "gift" ? selected : unselected}`}
-            onClick={() => choose("gift")}
-          >
-            <div className="text-lg font-medium"> Gift</div>
-            <div className="mt-1 text-sm text-amber-950">Candles, cards, accessories, treats</div>
-          </button>
-
-          <button
-            className={`${btnBase} ${intent === "food" ? selected : unselected}`}
-            onClick={() => choose("food")}
-          >
-            <div className="text-lg font-medium"> Food</div>
-            <div className="mt-1 text-sm text-amber-950">Bakeries, catering, snacks, coffee</div>
-          </button>
-
-          <button
-            className={`${btnBase} ${intent === "clothing" ? selected : unselected}`}
-            onClick={() => choose("clothing")}
-          >
-            <div className="text-lg font-medium"> Clothing</div>
-            <div className="mt-1 text-sm text-amber-950">Apparel, jewelry, vintage, handmade</div>
-          </button>
-
-          <button
-            className={`${btnBase} ${intent === "services" ? selected : unselected}`}
-            onClick={() => choose("services")}
-          >
-            <div className="text-lg font-medium"> Services</div>
-            <div className="mt-1 text-sm text-amber-950">Photography, salons, tutoring, wellness</div>
-          </button>
-
-          <button
-            className={`${btnBase} ${intent === "other" ? selected : unselected}`}
-            onClick={() => choose("other")}
-          >
-            <div className="text-lg font-medium"> Something else</div>
-            <div className="mt-1 text-sm text-amber-950">Type what you want (optional)</div>
-
-            {intent === "other" && (
-              <div className="mt-3">
-                <input
-                  value={otherText}
-                  onChange={(e) => setOtherText(e.target.value)}
-                  placeholder="e.g., 'plants', 'home decor', 'kids books'…"
-                  className="w-full rounded-xl border border-amber-950 px-3 py-2 text-sm outline-none focus:border-amber-950"
-                />
+          {["gift", "food", "clothing", "services", "other"].map((i) => (
+            <button
+              key={i}
+              className={`${btnBase} ${intent === i ? selected : unselected}`}
+              onClick={() => choose(i as Intent)}
+            >
+              <div className="text-lg">
+                {i === "other" ? "Something else" : i.charAt(0).toUpperCase() + i.slice(1)}
               </div>
-            )}
-          </button>
+              <div className="mt-1 text-sm text-[color:var(--outline)]">
+                {{
+                  gift: "Candles, cards, accessories, treats",
+                  food: "Bakeries, catering, snacks, coffee",
+                  clothing: "Apparel, jewelry, vintage, handmade",
+                  services: "Photography, salons, tutoring, wellness",
+                  other: "Type what you want (optional)",
+                }[i]}
+              </div>
+
+              {i === "other" && intent === "other" && (
+                <div className="mt-3">
+                  <input
+                    value={otherText}
+                    onChange={(e) => setOtherText(e.target.value)}
+                    placeholder="e.g., 'plants', 'home decor', 'kids books'…"
+                    className="w-full rounded-xl border border-[color:var(--outline)] px-3 py-2 text-sm outline-none focus:border-[color:var(--outline)]"
+                  />
+                </div>
+              )}
+            </button>
+          ))}
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-          <a href="/" className="text-sm text-amber-950 hover:text-amber-950">
+          <a href="/" className="text-sm text-[color:var(--outline)] hover:text-[color:var(--outline)]">
             ← Back
           </a>
 
           <button
             onClick={onNext}
             disabled={!intent || (intent === "other" && otherText.trim().length === 0)}
-            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-amber-950"
+            className="rounded-xl bg-[color:var(--outline)] px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-[color:var(--outline)/90]"
           >
             Next →
           </button>
         </div>
 
         {intent === "other" && (
-          <p className="mt-3 text-xs text-amber-950">
+          <p className="mt-3 text-xs text-[color:var(--outline)]">
             Tip: type something to enable Next.
           </p>
         )}

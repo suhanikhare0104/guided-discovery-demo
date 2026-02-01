@@ -98,22 +98,22 @@ export default function SubmitBusinessPage() {
 
       <main className="mx-auto max-w-5xl px-6 pb-16 pt-10">
         <div className="card p-8">
-          <p className="text-sm font-medium text-zinc-700">Submit your business</p>
+          <p className="text-sm font-medium text-amber-950">Submit your business</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
             Add a women-owned business to HerMarket.
           </h1>
-          <p className="mt-3 max-w-3xl text-sm text-zinc-700">
-            Demo note: submissions are saved locally in your browser and can be reviewed later.
+          <p className="mt-3 max-w-3xl text-sm text-amber-950">
+            Note: submissions are saved locally in your browser and can be reviewed later.
           </p>
 
           {success ? (
             <div className="mt-8 card p-6">
-              <p className="text-sm font-semibold text-zinc-900"> Submitted!</p>
-              <p className="mt-2 text-sm text-zinc-700">
+              <p className="text-sm font-semibold text-amber-950"> Submitted!</p>
+              <p className="mt-2 text-sm text-amber-950">
                 Thanks — your submission was saved (demo mode). You can submit another business below.
               </p>
               <button
-                className="mt-4 rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+                className="mt-4 rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white hover:bg-amber-950"
                 onClick={() => {
                   setSuccess(false);
                   setName("");
@@ -140,7 +140,7 @@ export default function SubmitBusinessPage() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="text-sm font-medium text-zinc-800">Business name *</label>
+                  <label className="text-sm font-medium text-amber-950">Business name *</label>
                   <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -150,7 +150,7 @@ export default function SubmitBusinessPage() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-800">Category *</label>
+                  <label className="text-sm font-medium text-amber-950">Category *</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as Category)}
@@ -166,7 +166,7 @@ export default function SubmitBusinessPage() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-zinc-800">Description *</label>
+                <label className="text-sm font-medium text-amber-950">Description *</label>
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -199,7 +199,7 @@ export default function SubmitBusinessPage() {
               </div>
 
               <div className="card p-5">
-                <p className="text-sm font-semibold text-zinc-900">Values</p>
+                <p className="text-sm font-semibold text-amber-950">Values</p>
                 <p className="mt-1 text-sm text-zinc-700">Select all that apply.</p>
 
                 <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -217,7 +217,7 @@ export default function SubmitBusinessPage() {
                       type="button"
                       onClick={() => toggleTag(key)}
                       className={`rounded-xl px-3 py-2 text-sm font-medium ${
-                        tags.includes(key) ? "bg-zinc-900 text-white" : "bg-white/70 text-zinc-800"
+                        tags.includes(key) ? "bg-amber-950 text-white" : "bg-white/70 text-amber-950"
                       }`}
                     >
                       {label}

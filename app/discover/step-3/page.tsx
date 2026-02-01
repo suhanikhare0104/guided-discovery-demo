@@ -188,7 +188,7 @@ export default function Step3Location() {
                     key={r}
                     onClick={() => setRadius(r)}
                     className={`rounded-xl border px-4 py-2 text-sm ${
-                      radius === r ? "border-amber-950 bg-amber-950" : "border-amber-950 bg-white hover:bg-amber-950"
+                      radius === r ? "border-amber-950 bg-amber-950" : "border-amber-950 bg-bg-soft-pink hover:bg-amber-950"
                     }`}
                   >
                     {r} miles

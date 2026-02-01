@@ -37,9 +37,9 @@ export default function Home() {
         </div>
 
         {/* Info Card */}
-        <div className="mt-12 w-full max-w-3xl rounded-2xl border border-amber-950 bg-white/70 p-6 text-left">
+        <div className="mt-12 mx-auto w-fit max-w-md rounded-2xl border border-amber-950 bg-white/70 px-8 py-6 text-center">
           <p className="text-sm font-semibold text-amber-950">How it works</p>
-          <ol className="mt-3 space-y-2 text-sm text-amber-950">
+          <ol className="mt-4 space-y-2 text-sm text-amber-950">
             <li>1) Choose what you’re looking for</li>
             <li>2) Pick up to two values you care about</li>
             <li>3) Get curated results with clear explanations</li>

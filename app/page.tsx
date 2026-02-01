@@ -9,7 +9,6 @@ export default function Home() {
 
         <nav className="flex items-center gap-5 text-sm text-zinc-600">
           <a href="/about" className="hover:text-zinc-900">About</a>
-          <a href="/ethics" className="hover:text-zinc-900">Ethics</a>
           <a href="/submit" className="hover:text-zinc-900">Submit Business</a>
         </nav>
       </header>
@@ -35,13 +34,6 @@ export default function Home() {
             className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
           >
             Start Discovering
-          </a>
-
-          <a
-            href="/ethics"
-            className="rounded-xl border border-zinc-200 px-5 py-3 text-sm font-medium text-zinc-800 hover:bg-zinc-50"
-          >
-            How this works
           </a>
         </div>
 

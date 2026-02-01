@@ -146,7 +146,7 @@ useEffect(() => {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* LEFT */}
+          {}
           <section className="lg:col-span-2">
             {recs.length === 0 ? (
               <div className="rounded-2xl border border-zinc-200 p-6">
@@ -224,15 +224,15 @@ useEffect(() => {
             )}
           </section>
 
-          {/* RIGHT (sticky) */}
+          {}
           <aside className="lg:col-span-1">
             <div className="sticky top-6 rounded-2xl border border-zinc-200 bg-white p-6">
               <h3 className="text-lg font-semibold">Your impact today</h3>
 
               <div className="mt-4 space-y-2 text-sm text-zinc-700">
-                <div>✔ Supporting women-owned businesses</div>
-                {(flow.values ?? []).includes("local") && <div>✔ Prioritizing local founders</div>}
-                {(flow.values ?? []).includes("sustainable") && <div>✔ Encouraging sustainable choices</div>}
+                <div> Supporting women-owned businesses</div>
+                {(flow.values ?? []).includes("local") && <div> Prioritizing local founders</div>}
+                {(flow.values ?? []).includes("sustainable") && <div> Encouraging sustainable choices</div>}
               </div>
 
               <div className="mt-6 rounded-xl border border-zinc-100 bg-zinc-50 p-4">

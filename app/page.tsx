@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans text-zinc-900">
+    <div className="min-h-screen font-serif text-zinc-900">
       {/* Top Navigation */}
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div className="text-lg font-semibold tracking-tight">

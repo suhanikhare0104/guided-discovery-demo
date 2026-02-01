@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         {/* Info Card */}
-        <div className="mt-16 w-full max-w-3xl rounded-2xl border border-amber-950 bg-white/70 p-6 text-left">
+        <div className="mt-12 w-full max-w-3xl rounded-2xl border border-amber-950 bg-white/70 p-6 text-left">
           <p className="text-sm font-semibold text-amber-950">How it works</p>
           <ol className="mt-3 space-y-2 text-sm text-amber-950">
             <li>1) Choose what you’re looking for</li>

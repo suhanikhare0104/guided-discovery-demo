@@ -134,7 +134,7 @@ export default function Step3Location() {
             className={`${btnBase} ${choice === "near_me" ? selected : unselected}`}
             onClick={() => setChoice("near_me")}
           >
-            📍 <strong>Near me</strong>
+             <strong>Near me</strong>
             <div className="mt-1 text-sm text-amber-950">
               Filter within a radius you choose
             </div>
@@ -144,7 +144,7 @@ export default function Step3Location() {
             className={`${btnBase} ${choice === "same_state" ? selected : unselected}`}
             onClick={() => setChoice("same_state")}
           >
-            🏷 <strong>Same state</strong>
+             <strong>Same state</strong>
             <div className="mt-1 text-sm text-amber-950">
               Prioritize businesses in your state (demo)
             </div>
@@ -203,9 +203,9 @@ export default function Step3Location() {
             <div className="mt-4 text-xs text-amber-950">
               Status:{" "}
               {geoStatus === "granted"
-                ? "Location granted ✅"
+                ? "Location granted "
                 : geoStatus === "denied"
-                ? "Denied ❌"
+                ? "Denied "
                 : geoStatus === "loading"
                 ? "Requesting…"
                 : "Not requested yet"}

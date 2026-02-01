@@ -86,7 +86,7 @@ export default function Step1Intent() {
             className={`${btnBase} ${intent === "gift" ? selected : unselected}`}
             onClick={() => choose("gift")}
           >
-            <div className="text-lg font-medium">🎁 Gift</div>
+            <div className="text-lg font-medium"> Gift</div>
             <div className="mt-1 text-sm text-amber-950">Candles, cards, accessories, treats</div>
           </button>
 
@@ -94,7 +94,7 @@ export default function Step1Intent() {
             className={`${btnBase} ${intent === "food" ? selected : unselected}`}
             onClick={() => choose("food")}
           >
-            <div className="text-lg font-medium">🍽 Food</div>
+            <div className="text-lg font-medium"> Food</div>
             <div className="mt-1 text-sm text-amber-950">Bakeries, catering, snacks, coffee</div>
           </button>
 
@@ -102,7 +102,7 @@ export default function Step1Intent() {
             className={`${btnBase} ${intent === "clothing" ? selected : unselected}`}
             onClick={() => choose("clothing")}
           >
-            <div className="text-lg font-medium">👕 Clothing</div>
+            <div className="text-lg font-medium"> Clothing</div>
             <div className="mt-1 text-sm text-amber-950">Apparel, jewelry, vintage, handmade</div>
           </button>
 
@@ -110,7 +110,7 @@ export default function Step1Intent() {
             className={`${btnBase} ${intent === "services" ? selected : unselected}`}
             onClick={() => choose("services")}
           >
-            <div className="text-lg font-medium">🛠 Services</div>
+            <div className="text-lg font-medium"> Services</div>
             <div className="mt-1 text-sm text-amber-950">Photography, salons, tutoring, wellness</div>
           </button>
 
@@ -118,7 +118,7 @@ export default function Step1Intent() {
             className={`${btnBase} ${intent === "other" ? selected : unselected}`}
             onClick={() => choose("other")}
           >
-            <div className="text-lg font-medium">✏️ Something else</div>
+            <div className="text-lg font-medium"> Something else</div>
             <div className="mt-1 text-sm text-amber-950">Type what you want (optional)</div>
 
             {intent === "other" && (

@@ -10,9 +10,6 @@ export default function AboutPage() {
           <a href="/about" className="hover:text-amber-950 underline underline-offset-4">
             About
           </a>
-          <a href="/ethics" className="hover:text-amber-950">
-            Ethics
-          </a>
           <a href="/submit" className="hover:text-amber-950">
             Submit Business
           </a>

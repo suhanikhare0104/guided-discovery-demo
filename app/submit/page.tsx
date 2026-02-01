@@ -90,9 +90,6 @@ export default function SubmitBusinessPage() {
           <a href="/about" className="hover:text-zinc-900">
             About
           </a>
-          <a href="/ethics" className="hover:text-zinc-900">
-            Ethics
-          </a>
           <a href="/submit" className="hover:text-zinc-900 underline underline-offset-4">
             Submit Business
           </a>

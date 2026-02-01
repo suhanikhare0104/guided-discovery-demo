@@ -20,32 +20,34 @@ export default function AboutPage() {
         <div className="card p-8">
           <p className="text-sm font-medium text-amber-950">About</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-            A calmer way to discover women-owned businesses.
+            A easy and simple way to discover women-owned businesses.
           </h1>
           <p className="mt-4 max-w-3xl text-base text-amber-950">
-            HerMarket helps people find women-owned businesses based on what they care about—like
-            shopping local or supporting new founders—without ads or popularity bias.
+            HerMarket helps people discover women-owned businesses based on what 
+            they actually care about, like shopping local or supporting new founders, 
+            without being influenced by ads or popularity.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="card p-5">
               <p className="text-sm font-semibold text-amber-950">Guided discovery</p>
               <p className="mt-2 text-sm text-amber-950">
-                We ask 3 simple questions and rank results based on your intent + values.
+                We'll ask a couple questions and rank results based on your interests and values
               </p>
             </div>
 
             <div className="card p-5">
               <p className="text-sm font-semibold text-amber-950">Transparent recommendations</p>
               <p className="mt-2 text-sm text-amber-950">
-                Each result includes “Why this was recommended.”
+                Each result includes a explnation of why it was recommended
               </p>
             </div>
 
             <div className="card p-5">
               <p className="text-sm font-semibold text-amber-950">Built to scale</p>
               <p className="mt-2 text-sm text-amber-950">
-                Businesses can submit directly and the dataset can expand region-by-region.
+                As more businesses join, the dataset grows, 
+                which helps make search results more accurate and useful for users
               </p>
             </div>
           </div>

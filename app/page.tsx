@@ -15,15 +15,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="mx-auto flex max-w-5xl flex-col items-center px-6 pt-20 text-center">
-        <p className="text-sm font-medium text-zinc-500">
+        <p className="mt-4 max-w-2xl text-2xl font-normal text-zinc-600 text-center">
           Where you spend matters.
         </p>
 
-        <h1 className="mt-3 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-center">
+        <h1 className="mt-3 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-center">
           Businesses run by women, chosen by you{" "}
         </h1>
 
-        <p className="mt-4 max-w-2xl text-base text-zinc-600">
+        <p className="mt-4 max-w-2xl text-2xl font-normal text-zinc-600 text-center">
           No ads. No popularity bias. Just guided discovery that ranks results by your values.
         </p>
 

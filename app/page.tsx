@@ -20,7 +20,7 @@ export default function Home() {
         </p>
 
         <h1 className="mt-3 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-center">
-          Discover women-owned businesses based on what{" "}
+          Businesses run by women, chosen by you{" "}
           <span className="underline decoration-zinc-300">you</span> care about.
         </h1>
 

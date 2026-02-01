@@ -64,26 +64,26 @@ export default function Step2Values() {
   if (!ready) return null;
 
   const btnBase =
-    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-zinc-50";
+    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-amber-950";
   const selected =
-    "border-zinc-900 bg-zinc-50";
+    "border-amber-950 bg-amber-950";
   const unselected =
-    "border-zinc-200 bg-white";
+    "border-amber-950 bg-white";
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-[#fabcce] text-amber-950">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-semibold tracking-tight">
           HerMarket
         </a>
-        <div className="text-sm text-zinc-500">Step 2 of 3</div>
+        <div className="text-sm text-amber-950">Step 2 of 3</div>
       </header>
 
       <main className="mx-auto max-w-3xl px-6 pb-16 pt-8">
         <h1 className="text-3xl font-semibold tracking-tight">
           What matters most to you?
         </h1>
-        <p className="mt-3 text-zinc-600">
+        <p className="mt-3 text-amber-950">
           Choose up to <strong>2</strong>. We’ll use these to rank results.
         </p>
 
@@ -93,7 +93,7 @@ export default function Step2Values() {
             onClick={() => toggle("local")}
           >
             📍 <strong>Local</strong>
-            <div className="mt-1 text-sm text-zinc-600">Support founders near you</div>
+            <div className="mt-1 text-sm text-amber-950">Support founders near you</div>
           </button>
 
           <button
@@ -101,7 +101,7 @@ export default function Step2Values() {
             onClick={() => toggle("sustainable")}
           >
             🌱 <strong>Sustainable</strong>
-            <div className="mt-1 text-sm text-zinc-600">Eco-conscious practices</div>
+            <div className="mt-1 text-sm text-amber-950">Eco-conscious practices</div>
           </button>
 
           <button
@@ -109,7 +109,7 @@ export default function Step2Values() {
             onClick={() => toggle("small_new")}
           >
             🆕 <strong>Small / New Business</strong>
-            <div className="mt-1 text-sm text-zinc-600">Early-stage founders</div>
+            <div className="mt-1 text-sm text-amber-950">Early-stage founders</div>
           </button>
 
           <button
@@ -117,7 +117,7 @@ export default function Step2Values() {
             onClick={() => toggle("underrepresented")}
           >
             ⚖️ <strong>Underrepresented Industry</strong>
-            <div className="mt-1 text-sm text-zinc-600">Breaking into new spaces</div>
+            <div className="mt-1 text-sm text-amber-950">Breaking into new spaces</div>
           </button>
 
           <button
@@ -125,25 +125,25 @@ export default function Step2Values() {
             onClick={() => toggle("fast_delivery")}
           >
             🚚 <strong>Fast Delivery</strong>
-            <div className="mt-1 text-sm text-zinc-600">Get it quickly</div>
+            <div className="mt-1 text-sm text-amber-950">Get it quickly</div>
           </button>
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-          <a href="/discover/step-1" className="text-sm text-zinc-600 hover:text-zinc-900">
+          <a href="/discover/step-1" className="text-sm text-amber-950 hover:text-amber-950">
             ← Back
           </a>
 
           <button
             onClick={onNext}
             disabled={values.length === 0}
-            className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-zinc-800"
+            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-amber-950"
           >
             Next →
           </button>
         </div>
 
-        <p className="mt-3 text-xs text-zinc-500">
+        <p className="mt-3 text-xs text-amber-950">
           {values.length}/2 selected
         </p>
       </main>

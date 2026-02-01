@@ -106,26 +106,26 @@ export default function Step3Location() {
   if (!ready) return null;
 
   const btnBase =
-    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-zinc-50";
-  const selected = "border-zinc-900 bg-zinc-50";
-  const unselected = "border-zinc-200 bg-white";
+    "w-full rounded-2xl border px-5 py-4 text-left transition hover:bg-amber-950";
+  const selected = "border-amber-950 bg-amber-950";
+  const unselected = "border-amber-950 bg-white";
 
   const radiusOptions = [5, 10, 15, 20];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-[#fabcce] text-amber-950">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-semibold tracking-tight">
           HerMarket
         </a>
-        <div className="text-sm text-zinc-500">Step 3 of 3</div>
+        <div className="text-sm text-amber-950">Step 3 of 3</div>
       </header>
 
       <main className="mx-auto max-w-3xl px-6 pb-16 pt-8">
         <h1 className="text-3xl font-semibold tracking-tight">
           Where should it be?
         </h1>
-        <p className="mt-3 text-zinc-600">
+        <p className="mt-3 text-amber-950">
           Choose a location preference. If you pick “Near me,” we’ll ask for your location and filter by radius.
         </p>
 
@@ -135,7 +135,7 @@ export default function Step3Location() {
             onClick={() => setChoice("near_me")}
           >
             📍 <strong>Near me</strong>
-            <div className="mt-1 text-sm text-zinc-600">
+            <div className="mt-1 text-sm text-amber-950">
               Filter within a radius you choose
             </div>
           </button>
@@ -145,7 +145,7 @@ export default function Step3Location() {
             onClick={() => setChoice("same_state")}
           >
             🏷 <strong>Same state</strong>
-            <div className="mt-1 text-sm text-zinc-600">
+            <div className="mt-1 text-sm text-amber-950">
               Prioritize businesses in your state (demo)
             </div>
           </button>
@@ -155,7 +155,7 @@ export default function Step3Location() {
             onClick={() => setChoice("anywhere")}
           >
             🌎 <strong>Anywhere</strong>
-            <div className="mt-1 text-sm text-zinc-600">
+            <div className="mt-1 text-sm text-amber-950">
               Show best matches across all locations
             </div>
           </button>
@@ -163,18 +163,18 @@ export default function Step3Location() {
 
         {/* Near me extras */}
         {choice === "near_me" && (
-          <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+          <div className="mt-6 rounded-2xl border border-amber-950 bg-white p-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm font-medium">Use your current location</p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-amber-950">
                   We use this only to compute distance for results.
                 </p>
               </div>
 
               <button
                 onClick={requestLocation}
-                className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+                className="rounded-xl bg-amber-950 px-4 py-2 text-sm font-medium text-white hover:bg-amber-950"
               >
                 {geoStatus === "loading" ? "Requesting…" : "Allow location"}
               </button>
@@ -188,19 +188,19 @@ export default function Step3Location() {
                     key={r}
                     onClick={() => setRadius(r)}
                     className={`rounded-xl border px-4 py-2 text-sm ${
-                      radius === r ? "border-zinc-900 bg-zinc-50" : "border-zinc-200 bg-white hover:bg-zinc-50"
+                      radius === r ? "border-amber-950 bg-amber-950" : "border-amber-950 bg-white hover:bg-amber-950"
                     }`}
                   >
                     {r} miles
                   </button>
                 ))}
               </div>
-              <p className="mt-2 text-xs text-zinc-500">
+              <p className="mt-2 text-xs text-amber-950">
                 Selected: {radius} miles
               </p>
             </div>
 
-            <div className="mt-4 text-xs text-zinc-600">
+            <div className="mt-4 text-xs text-amber-950">
               Status:{" "}
               {geoStatus === "granted"
                 ? "Location granted ✅"
@@ -214,14 +214,14 @@ export default function Step3Location() {
         )}
 
         <div className="mt-10 flex items-center justify-between">
-          <a href="/discover/step-2" className="text-sm text-zinc-600 hover:text-zinc-900">
+          <a href="/discover/step-2" className="text-sm text-amber-950 hover:text-amber-950">
             ← Back
           </a>
 
           <button
             onClick={onShowResults}
             disabled={!choice}
-            className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-zinc-800"
+            className="rounded-xl bg-amber-950 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-40 hover:bg-amber-950"
           >
             Show Results →
           </button>

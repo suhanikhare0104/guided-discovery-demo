@@ -56,10 +56,10 @@ export default function ResultsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
+    <div className="min-h-screen bg-[#fabcce] text-amber-950">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a href="/" className="text-lg font-semibold tracking-tight">HerMarket</a>
-        <a href="/discover/step-1" className="text-sm text-zinc-600 hover:text-zinc-900">
+        <a href="/discover/step-1" className="text-sm text-amber-950 hover:text-zinc-900">
           Adjust preferences
         </a>
       </header>
